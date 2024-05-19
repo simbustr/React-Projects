@@ -1,0 +1,121 @@
+
+.form-wrp{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    background-color: goldenrod;
+}
+
+.form-control{
+    display: grid;
+    padding: 4px 0px;
+    gap: 5px;
+}
+
+.form-control input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.form-wrp button {
+    padding: 4px 6px;
+    border: 0px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.nav-bar{
+    background-color: goldenrod;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.input-main{
+    margin-top: 10px;
+}
+
+.input-wrp input {
+    font-size: 20px;
+    font-weight: 500;
+    background: #f9f9f9;
+    color: #000;
+    border: 1px solid #dfe3e6;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    
+}
+
+
+
+.task_submit {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #32a20c;
+    color: #fff;
+    border-radius: 5px;
+    height: 40px;
+    padding: 3px 13px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.app_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.input-wrp{
+    display: flex;
+    gap: 5px;
+}
+
+
+.task_delete {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #F44336;
+    color: #fff;
+    border-radius: 5px;
+    height: 40px;
+    padding: 3px 13px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.task_edit{
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #6457f9;
+    color: #fff;
+    border-radius: 5px;
+    height: 40px;
+    padding: 3px 13px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.card-cont{
+    background-color: #BBDEFB;
+    padding: 10px;
+    margin-bottom: 10px;
+}
