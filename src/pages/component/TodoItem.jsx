@@ -1,13 +1,15 @@
 import React from 'react'
 
-const TodoItem = ({todo, onDelete}) => {
+const TodoItem = ({todo, onDelete,onEdit}) => {
   return (
     <div className='card-cont'>
-       <div>{todo.title}</div> 
-       <div>{todo.description}</div>
+       <div><h1>{todo.title}</h1></div> 
+       <div><p>{todo.description}</p></div>
        
-       <button className='task_edit' onClick={()=>onDelete(todo._id)}>Edit</button>
+       <div className='btn-wrp'>
+       <button className='task_edit' onClick={()=>onEdit(todo._id)}>Edit</button>
        <button className='task_delete' onClick={()=>onDelete(todo._id)}>Delete</button>
+       </div>
     </div>
   )
 }

@@ -7,6 +7,7 @@ const TodoApp = () => {
   const [todos, setTodos] = useState([]);
   const [newTitle, setNewTitle] = useState('');
   const [newDescription, setNewDescription] = useState('');
+  const [editingTodo, setEditingTodo] = useState(null);
 
  
 
@@ -34,7 +35,15 @@ const TodoApp = () => {
   };
 
 
-
+  const editTodo = async (id, updatedTodo) => {
+    try {
+      const response = await axios.put(`https://node-user-curd.vercel.app/api/todos/${id}`, updatedTodo);
+      setTodos(todos.map(todo => (todo._id === id ? response.data : todo)));
+      setEditingTodo(null);
+    } catch (error) {
+      console.error('Error editing todo:', error);
+    }
+  };
 
   const addTodo = async () => {
     try {
@@ -59,10 +68,26 @@ const TodoApp = () => {
     }
   };
 
+  const handleEdit = (id) => {
+    const todo = todos.find(todo => todo._id === id);
+    setEditingTodo(todo);
+    setNewTitle(todo.title);
+    setNewDescription(todo.description);
+  };
+
+  const handleSaveEdit = (e) => {
+    e.preventDefault();
+    if (editingTodo) {
+      editTodo(editingTodo._id, { title: newTitle, description: newDescription });
+      setNewTitle('');
+      setNewDescription('');
+    }
+  };
+
 
   return (
     <div className="input-main">
-      <form onSubmit={handleAddTodo}>
+      <form  onSubmit={editingTodo ? handleSaveEdit : handleAddTodo}>
         <div className="input-wrp">
           <div>
           <input
@@ -84,13 +109,17 @@ const TodoApp = () => {
         />
           </div>
           <div>
-            <button className="task_submit">Add Task</button>
+           
+
+            <button type="submit" className="task_submit">
+          {editingTodo ? 'Save' : 'Add'}
+        </button>
           </div>
         </div>
       </form>
 
 
-      <TodoList todos={todos} setTodos={setTodos}/>
+      <TodoList todos={todos} setTodos={setTodos} onEdit={handleEdit}/>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import TodoItem from "./TodoItem"
 
-const TodoList = ({ todos, setTodos }) => {
+const TodoList = ({ todos, setTodos, onEdit }) => {
 
 
     const handleDelete = async (id) => {
@@ -14,11 +14,13 @@ const TodoList = ({ todos, setTodos }) => {
         }
       };
 
+  
+
   return (
     <div>
        {todos.map((todo,index) => ( 
        <div key={index}>
-       <TodoItem todo={todo} onDelete={handleDelete}/>
+       <TodoItem todo={todo} onDelete={handleDelete} onEdit={onEdit}/>
        </div>
        ))}
     </div>
