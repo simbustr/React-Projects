@@ -7,6 +7,7 @@ import Servicespage from './pages/Services'
 import TodoPage from './pages/TodoList'
 import EmployeePage from './pages/Employee'
 import UserProfilePage from './pages/component/UserProfile/index'
+import EmployeeTablePage from './pages/EmployeeTable'
 
 
 
@@ -20,7 +21,7 @@ function App() {
          
           <Route path="/todo" element={<TodoPage />} />
           <Route path="/employee" element={<EmployeePage />} />
-          
+          <Route path="/employeetable" element={<EmployeeTablePage />} />
           <Route path="/dasboard" element={<DashboardPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/services" element={<Servicespage />} />
